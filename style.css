@@ -169,6 +169,42 @@ body, html {
     opacity: 1;
 }
 
+/* Rings Animation */
+.rings-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 1s ease cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ring {
+    width: 70px;
+    height: 70px;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.ring-left {
+    margin-right: -25px;
+    z-index: 2;
+    animation: pulseRing 3s infinite alternate ease-in-out;
+}
+
+.ring-right {
+    z-index: 1;
+    animation: pulseRing 3s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes pulseRing {
+    0% { transform: scale(1) rotate(0deg); border-color: var(--gold); }
+    100% { transform: scale(1.05) rotate(15deg); border-color: var(--light-gold); }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .details-section {
