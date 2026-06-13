@@ -276,8 +276,12 @@ body, html {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    body, html {
+        padding: 0.5rem;
+    }
+
     .couple-name {
-        font-size: 3.5rem;
+        font-size: 3.2rem;
     }
     
     .inner-border {
@@ -289,33 +293,64 @@ body, html {
     }
     
     .quran-verse {
-        font-size: 1.25rem;
-        line-height: 1.8;
+        font-size: 1.15rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+    
+    .pre-heading {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
     }
 }
 
 @media (max-width: 600px) {
     .details-section {
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem 0.5rem;
+        align-items: start;
+        margin: 1.5rem 0;
+        width: 100%;
     }
 
+    .detail-column:nth-child(1) { grid-column: 1; }
+    .detail-column:nth-child(3) { grid-column: 2; }
+    .detail-column:nth-child(5) { grid-column: 1 / -1; margin-top: 0.5rem; }
+
     .vertical-divider {
-        width: 60px;
-        height: 1px;
+        display: none;
     }
     
     .couple-name {
-        font-size: 3rem;
+        font-size: 2.6rem;
     }
     
     .ampersand {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        margin: 0.2rem 0;
     }
     
     .lace-border {
-        padding: 10px;
+        padding: 6px;
+        border-radius: 12px;
+    }
+    
+    .inner-border {
+        padding: 1.5rem 0.5rem;
+    }
+    
+    .detail-column .icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .detail-column p {
+        font-size: 0.95rem;
+    }
+    
+    .designer {
+        margin-top: 2rem;
     }
 }
 
