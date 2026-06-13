@@ -210,12 +210,29 @@ body, html {
     .details-section {
         flex-direction: column;
         align-items: center;
-        gap: 2.5rem;
+        gap: 1.5rem;
+        width: 100%;
     }
     
+    .detail-item {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.4);
+        padding: 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .detail-item .icon {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
     .pre-heading {
         font-size: 0.95rem;
         letter-spacing: 2px;
+        line-height: 1.6;
+        padding: 0 10px;
     }
     
     .couple-names {
@@ -225,22 +242,29 @@ body, html {
     .weds {
         font-size: 2.2rem;
         display: block;
-        margin: 10px 0;
+        margin: 5px 0;
     }
     
     .content-wrapper {
         padding: 2.5rem 1.5rem;
-        width: 95%;
+        width: 92%;
         margin: 1rem;
+        border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
     .ring {
         width: 55px;
         height: 55px;
     }
+    
+    .ring-left {
+        margin-right: -20px;
+    }
 
     .closing {
         font-size: 1.1rem;
+        line-height: 1.6;
+        padding: 0 10px;
     }
 }
 
@@ -254,14 +278,19 @@ body, html {
     }
     
     .content-wrapper {
-        padding: 2rem 1rem;
-        width: 98%;
+        padding: 2.5rem 1.2rem;
+        width: 95%;
         margin: 0.5rem;
+        border-radius: 25px;
     }
     
     .pre-heading {
         font-size: 0.85rem;
         letter-spacing: 1.5px;
+    }
+
+    .detail-item {
+        padding: 1.2rem;
     }
 
     .detail-item h3 {
@@ -270,5 +299,15 @@ body, html {
     
     .detail-item p {
         font-size: 1rem;
+    }
+    
+    .ring {
+        width: 45px;
+        height: 45px;
+        border-width: 2px;
+    }
+    
+    .ring-left {
+        margin-right: -15px;
     }
 }
