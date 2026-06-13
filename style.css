@@ -1,11 +1,11 @@
 :root {
-    --bg-start: #0f172a;
-    --bg-end: #020617;
-    --card-bg: rgba(255, 255, 255, 0.03);
+    --bg-start: #064e3b;
+    --bg-end: #022c22;
+    --card-bg: rgba(255, 255, 255, 0.05);
     --gold: #d4af37;
-    --text-primary: #f8fafc;
-    --text-secondary: #cbd5e1;
-    --border-glow: rgba(212, 175, 55, 0.2);
+    --text-primary: #fdfbf7;
+    --text-secondary: #d1d5db;
+    --border-glow: rgba(212, 175, 55, 0.35);
 }
 
 * {
@@ -17,7 +17,7 @@
 body, html {
     min-height: 100vh;
     font-family: 'Cinzel', serif;
-    background: linear-gradient(135deg, var(--bg-start), var(--bg-end), #111827, var(--bg-start));
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end), #065f46, var(--bg-start));
     background-size: 300% 300%;
     animation: gradientPan 15s ease infinite;
     color: var(--text-primary);
@@ -326,7 +326,7 @@ body, html {
 #intro-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(135deg, #0f172a, #020617);
+    background: linear-gradient(135deg, #064e3b, #022c22);
     z-index: 9999;
     display: flex;
     justify-content: center;
@@ -359,9 +359,9 @@ body, html {
     bottom: 0;
     width: 100%;
     height: 150px;
-    background: linear-gradient(145deg, #1e293b, #0f172a);
+    background: linear-gradient(145deg, #065f46, #022c22);
     border-radius: 4px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 0 0 2px rgba(255,255,255,0.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6), inset 0 0 0 2px rgba(212, 175, 55, 0.2);
     overflow: hidden;
 }
 
@@ -371,9 +371,9 @@ body, html {
     left: -5px;
     width: 210px;
     height: 40px;
-    background: linear-gradient(145deg, #1e293b, #0f172a);
+    background: linear-gradient(145deg, #065f46, #022c22);
     border-radius: 4px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 0 0 2px rgba(255,255,255,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5), inset 0 0 0 2px rgba(212, 175, 55, 0.2);
     z-index: 2;
     transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
     transform-origin: center bottom;
