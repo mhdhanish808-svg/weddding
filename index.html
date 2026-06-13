@@ -10,7 +10,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="lace-border fade-in">
+
+    <!-- Gift Box Intro Overlay -->
+    <div id="intro-overlay">
+        <div class="gift-wrapper" onclick="openGift()">
+            <div class="gift-box">
+                <div class="gift-lid">
+                    <div class="gift-bow">
+                        <div class="bow-left"></div>
+                        <div class="bow-right"></div>
+                        <div class="bow-center"></div>
+                    </div>
+                </div>
+                <div class="gift-body">
+                    <div class="gift-ribbon-v"></div>
+                    <div class="gift-ribbon-h"></div>
+                </div>
+            </div>
+            <p class="tap-text">Tap to Open</p>
+        </div>
+    </div>
+    
+    <div class="lace-border fade-in" id="main-content">
         <div class="card-container">
             <div class="inner-border">
                 
@@ -93,14 +114,40 @@
     </div>
     
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.slide-up, .fade-in');
+        // Main invitation animations
+        function startInvitationAnimations() {
+            const elements = document.querySelectorAll('.slide-up, .fade-in, .pop-in');
             elements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add('visible');
-                }, 200 * index);
+                }, index * 150);
             });
-        });
+        }
+
+        // Gift opening logic
+        function openGift() {
+            const overlay = document.getElementById('intro-overlay');
+            const lid = document.querySelector('.gift-lid');
+            const tapText = document.querySelector('.tap-text');
+            
+            // Trigger CSS animations
+            lid.classList.add('fly-off');
+            tapText.style.opacity = '0';
+            
+            // Wait for gift animation to finish, then reveal site
+            setTimeout(() => {
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+                
+                // Remove from DOM after fade out
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 1000);
+
+                // Start main website animations
+                startInvitationAnimations();
+            }, 1000); // Wait 1 second after tapping
+        }
     </script>
 </body>
 </html>
