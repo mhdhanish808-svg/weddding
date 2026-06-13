@@ -191,6 +191,16 @@ body, html {
     text-transform: uppercase;
 }
 
+.designer {
+    margin-top: 4rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
 /* Animations */
 .slide-up {
     opacity: 0;
