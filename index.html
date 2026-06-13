@@ -3,58 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thaha weds Shahanas | Wedding Invitation</title>
+    <title>Wedding Invitation | Thaha & Shahanas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="invitation-container">
-        <div class="overlay"></div>
-        <div class="content-wrapper">
-            <div class="rings-animation pop-in">
-                <div class="ring ring-left"></div>
-                <div class="ring ring-right"></div>
-            </div>
-            <p class="pre-heading fade-in">You are warmly invited to the wedding celebration of</p>
-            <h1 class="couple-names pop-in">Thaha <span class="weds">weds</span> Shahanas</h1>
-            
-            <div class="divider"></div>
-            
-            <div class="details-section slide-up">
-                <div class="detail-item">
-                    <span class="icon">📅</span>
-                    <h3>Date</h3>
-                    <p>02/07/2026</p>
+    <div class="lace-border fade-in">
+        <div class="card-container">
+            <div class="inner-border">
+                
+                <div class="bismillah slide-up">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Bismillah.svg" alt="Bismillah" class="bismillah-svg">
                 </div>
                 
-                <div class="detail-item center-item">
-                    <span class="icon">🕌</span>
-                    <h3>Nikah Time</h3>
-                    <p>4:00 PM - 10:00 PM</p>
+                <p class="pre-heading slide-up">
+                    IN THE NAME OF ALLAH,<br>
+                    THE MOST GRACIOUS, THE MOST MERCIFUL<br><br>
+                    <span class="ornament">⟡</span><br><br>
+                    With the blessings of Almighty Allah,<br>
+                    We cordially invite you to the<br>
+                    wedding ceremony of
+                </p>
+                
+                <div class="names-section slide-up">
+                    <h1 class="couple-name">Thaha</h1>
+                    <div class="ampersand">&</div>
+                    <h1 class="couple-name">Shahanas</h1>
                 </div>
 
-                <div class="detail-item">
-                    <span class="icon">📍</span>
-                    <h3>Venue</h3>
-                    <p>Kannur Hall</p>
+                <div class="journey-text slide-up">
+                    <span class="heart-icon">♥</span><br>
+                    as they begin their journey together in marriage.
                 </div>
+
+                <div class="details-section slide-up">
+                    <div class="detail-column">
+                        <div class="icon">📅</div>
+                        <h3>DATE</h3>
+                        <p>2nd July 2026</p>
+                    </div>
+                    
+                    <div class="vertical-divider"></div>
+                    
+                    <div class="detail-column">
+                        <div class="icon">🕒</div>
+                        <h3>TIME</h3>
+                        <p>4:00 PM<br>to 10:00 PM</p>
+                    </div>
+                    
+                    <div class="vertical-divider"></div>
+                    
+                    <div class="detail-column">
+                        <div class="icon">📍</div>
+                        <h3>VENUE</h3>
+                        <p>Kannur Hall</p>
+                    </div>
+                </div>
+
+                <div class="horizontal-divider slide-up">
+                    <span class="ornament">⟡</span>
+                </div>
+
+                <p class="closing slide-up">
+                    Your presence and blessings will make<br>
+                    this occasion even more special.<br>
+                    <span class="heart-icon">♥</span>
+                </p>
+
+                <p class="regards slide-up">With warm regards,</p>
+                
+                <p class="families slide-up">Families of Thaha & Shahanas</p>
+
             </div>
-            
-            <div class="divider"></div>
-
-            <p class="closing fade-in-late">All are invited to join us and bless the occasion.</p>
-            <div class="bottom-ornament fade-in-late">✨</div>
         </div>
     </div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const elements = document.querySelectorAll('.fade-in, .pop-in, .slide-up, .divider, .fade-in-late');
+            const elements = document.querySelectorAll('.slide-up, .fade-in');
             elements.forEach((el, index) => {
                 setTimeout(() => {
                     el.classList.add('visible');
-                }, 300 * (index + 1));
+                }, 200 * index);
             });
         });
     </script>

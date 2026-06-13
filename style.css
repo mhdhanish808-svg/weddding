@@ -1,9 +1,10 @@
 :root {
-    --primary-color: #2b3a2f; /* Deep elegant green */
-    --gold: #d4af37;
-    --light-gold: #f3e5ab;
-    --text-dark: #1a1a1a;
-    --text-light: #fdfbf7;
+    --bg-color: #F8F5F0; /* Soft ivory/cream */
+    --card-bg: #FCFAF6;
+    --gold: #A68A56;
+    --dark-gold: #8B7347;
+    --text-dark: #2C2A26;
+    --lace-color: rgba(255, 255, 255, 0.9);
 }
 
 * {
@@ -13,301 +14,237 @@
 }
 
 body, html {
-    height: 100%;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #000;
-    overflow-x: hidden;
-}
-
-.invitation-container {
     min-height: 100vh;
-    width: 100%;
+    font-family: 'Cinzel', serif;
+    background-color: #EFEBE4;
+    color: var(--text-dark);
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('assets/wedding_bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
+    padding: 2rem 1rem;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-    z-index: 1;
-}
-
-.content-wrapper {
+/* Lace border effect using CSS gradients and SVG pattern */
+.lace-border {
     position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 4rem 3rem;
-    border-radius: 20px;
-    border: 2px solid rgba(212, 175, 55, 0.5);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    text-align: center;
     max-width: 800px;
-    width: 90%;
-    margin: 2rem;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--lace-color);
+    background-image: radial-gradient(circle at 10px 10px, transparent 10px, var(--lace-color) 11px);
+    background-size: 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    opacity: 0;
+    transition: opacity 1s ease;
 }
 
-.top-ornament, .bottom-ornament {
-    font-size: 2rem;
-    color: var(--gold);
-    margin-bottom: 1rem;
+.lace-border::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px;
+    border: 2px dashed rgba(255,255,255,0.7);
+    border-radius: 15px;
+    pointer-events: none;
 }
 
-.bottom-ornament {
-    margin-bottom: 0;
-    margin-top: 1rem;
+.card-container {
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+}
+
+.inner-border {
+    border: 1px solid var(--gold);
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+}
+
+/* Typography and Layout */
+.bismillah-svg {
+    width: 250px;
+    margin-bottom: 2rem;
+    opacity: 0.85;
+    filter: invert(56%) sepia(19%) saturate(884%) hue-rotate(5deg) brightness(96%) contrast(87%);
 }
 
 .pre-heading {
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 1rem;
-    opacity: 0;
-    transition: all 1s ease;
-}
-
-.couple-names {
     font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    color: var(--primary-color);
-    line-height: 1.2;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    letter-spacing: 1px;
+    color: var(--text-dark);
     margin-bottom: 2rem;
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 1s ease cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.weds {
-    font-family: 'Great Vibes', cursive;
+.ornament {
     color: var(--gold);
-    font-size: 3rem;
-    margin: 0 10px;
-    display: inline-block;
+    font-size: 1.2rem;
 }
 
-.divider {
-    height: 2px;
-    width: 0%;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 2rem auto;
-    opacity: 0;
-    transition: all 1.5s ease;
+.heart-icon {
+    color: var(--gold);
+    font-size: 0.8rem;
 }
 
+.names-section {
+    margin: 2rem 0;
+}
+
+.couple-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5rem;
+    color: var(--text-dark);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.ampersand {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    font-style: italic;
+    margin: 0.5rem 0;
+}
+
+.journey-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 3rem;
+}
+
+/* 3-Column Details Section */
 .details-section {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
     margin: 3rem 0;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
+    gap: 1.5rem;
 }
 
-.detail-item {
+.detail-column {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.detail-item .icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.detail-item h3 {
-    font-family: 'Playfair Display', serif;
+.detail-column .icon {
+    font-size: 2rem;
     color: var(--gold);
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
 }
 
-.detail-item p {
-    font-size: 1.1rem;
+.detail-column h3 {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
     color: var(--text-dark);
-    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.detail-column p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.vertical-divider {
+    width: 1px;
+    background-color: var(--gold);
+    opacity: 0.5;
+}
+
+.horizontal-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.horizontal-divider::before,
+.horizontal-divider::after {
+    content: '';
+    height: 1px;
+    width: 80px;
+    background-color: var(--gold);
+    opacity: 0.5;
+    margin: 0 15px;
 }
 
 .closing {
-    font-size: 1.3rem;
     font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: var(--primary-color);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.regards {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.families {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Animations */
+.slide-up {
     opacity: 0;
+    transform: translateY(20px);
     transition: all 1s ease;
 }
 
-/* Animations that will be triggered by JS */
-.fade-in.visible, .fade-in-late.visible {
-    opacity: 1;
-}
-.pop-in.visible {
-    opacity: 1;
-    transform: scale(1);
-}
-.slide-up.visible {
+.slide-up.visible, .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
-}
-.divider.visible {
-    width: 80%;
-    opacity: 1;
-}
-
-/* Rings Animation */
-.rings-animation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 1s ease cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.ring {
-    width: 70px;
-    height: 70px;
-    border: 3px solid var(--gold);
-    border-radius: 50%;
-    position: relative;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(212, 175, 55, 0.4);
-}
-
-.ring-left {
-    margin-right: -25px;
-    z-index: 2;
-    animation: pulseRing 3s infinite alternate ease-in-out;
-}
-
-.ring-right {
-    z-index: 1;
-    animation: pulseRing 3s infinite alternate-reverse ease-in-out;
-}
-
-@keyframes pulseRing {
-    0% { transform: scale(1) rotate(0deg); border-color: var(--gold); }
-    100% { transform: scale(1.05) rotate(15deg); border-color: var(--light-gold); }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .couple-name {
+        font-size: 3.5rem;
+    }
+    
+    .inner-border {
+        padding: 2rem 1rem;
+    }
+
+    .bismillah-svg {
+        width: 200px;
+    }
+}
+
+@media (max-width: 600px) {
     .details-section {
         flex-direction: column;
         align-items: center;
         gap: 1.5rem;
-        width: 100%;
-    }
-    
-    .detail-item {
-        width: 100%;
-        background: rgba(255, 255, 255, 0.4);
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.5);
     }
 
-    .detail-item .icon {
+    .vertical-divider {
+        width: 60px;
+        height: 1px;
+    }
+    
+    .couple-name {
+        font-size: 3rem;
+    }
+    
+    .ampersand {
         font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .pre-heading {
-        font-size: 0.95rem;
-        letter-spacing: 2px;
-        line-height: 1.6;
-        padding: 0 10px;
     }
     
-    .couple-names {
-        font-size: 2.8rem;
-    }
-    
-    .weds {
-        font-size: 2.2rem;
-        display: block;
-        margin: 5px 0;
-    }
-    
-    .content-wrapper {
-        padding: 2.5rem 1.5rem;
-        width: 92%;
-        margin: 1rem;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-    }
-
-    .ring {
-        width: 55px;
-        height: 55px;
-    }
-    
-    .ring-left {
-        margin-right: -20px;
-    }
-
-    .closing {
-        font-size: 1.1rem;
-        line-height: 1.6;
-        padding: 0 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .couple-names {
-        font-size: 2.3rem;
-    }
-    
-    .weds {
-        font-size: 1.8rem;
-    }
-    
-    .content-wrapper {
-        padding: 2.5rem 1.2rem;
-        width: 95%;
-        margin: 0.5rem;
-        border-radius: 25px;
-    }
-    
-    .pre-heading {
-        font-size: 0.85rem;
-        letter-spacing: 1.5px;
-    }
-
-    .detail-item {
-        padding: 1.2rem;
-    }
-
-    .detail-item h3 {
-        font-size: 1.1rem;
-    }
-    
-    .detail-item p {
-        font-size: 1rem;
-    }
-    
-    .ring {
-        width: 45px;
-        height: 45px;
-        border-width: 2px;
-    }
-    
-    .ring-left {
-        margin-right: -15px;
+    .lace-border {
+        padding: 10px;
     }
 }
